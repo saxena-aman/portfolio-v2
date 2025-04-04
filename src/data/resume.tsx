@@ -45,12 +45,6 @@ export const DATA = {
         icon: Icons.linkedin,
         navbar: true,
       },
-      email: {
-        name: "Send Email",
-        url: "mailto:amansaxena2809@gmail.com",
-        icon: "Icons.email",
-        navbar: false,
-      },
       X: {
         name: "X",
         url: "https://dub.sh/dillion-twitter",
