@@ -11,7 +11,7 @@ export const DATA = {
     "Software Engineer specializing in backend development and AI solutions. Passionate about building efficient systems and solving complex problems.",
   summary:
     "Software Engineer with expertise in Golang, C#, and Python. My focus is on developing reliable, scalable applications and AI-driven systems. I've worked on various projects including [an AI-driven Recommendation System](/#work), [centralized data platforms](/#work), and [personal AI assistants](/#projects). Currently working at Denovo Ventures in partnership with Cloudnuro.ai, enhancing data integration solutions.",
-  avatarUrl: "/me2.png", // Keeping this as is, you can update with your image path
+  avatarUrl: "/me.png", // Keeping this as is, you can update with your image path
   skills: [
     "Golang",
     "C#",
