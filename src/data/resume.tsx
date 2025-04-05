@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, FileText } from "lucide-react";
 
 export const DATA = {
   name: "Aman Saxena",
@@ -14,16 +14,24 @@ export const DATA = {
   avatarUrl: "/me.png", // Keeping this as is, you can update with your image path
   skills: [
     "Golang",
-    "C#",
     "Python",
-    "JavaScript",
-    "TypeScript",
-    "SQL",
+    "Flask",
     "PostgreSQL",
+    "Docker",
+    "OpenAI",
+    "HTML5",
+    "CSS3",
+    "JavaScript ES6",
     "ReactJS",
-    "NextJS",
-    "Node.js",
-    "Docker"
+    "Redux",
+    "VueJS",
+    "GitHub",
+    ".NET",
+    "C#",
+    "ASP.NET",
+    "SQL",
+    "IIS",
+    "GitLab"
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -45,16 +53,15 @@ export const DATA = {
         icon: Icons.linkedin,
         navbar: true,
       },
-      X: {
-        name: "X",
+      Resume: {
+        name: "Resume",
         url: "https://dub.sh/dillion-twitter",
-        icon: Icons.x,
+        icon: FileText,
 
         navbar: true,
       },
     },
   },
-
   work: [
     {
       company: "Denovo Ventures",
@@ -65,8 +72,25 @@ export const DATA = {
       logoUrl: "/atomic.png",  // You'll need to add this image
       start: "Nov 2024",
       end: "Present",
-      description:
-        "Designed and implemented a Listener System to efficiently fetch and process Employer and Employee data. Developed a Centralized Data Integration Platform connecting multiple Employer Listener Systems. Managed Windows Server environments using IIS for optimal performance. Implemented data encryption mechanisms for payroll information security. Technologies: .NET, Python, C#, ASP.NET, SQL, IIS, Gitlab.",
+      description: (
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Designed and implemented a <b>Listener System</b> to efficiently fetch and process <b>Employer and Employee data</b>.</li>
+          <li>Developed a <b>Centralized Data Integration Platform</b> connecting multiple <b>Employer Listener Systems</b>, ensuring seamless data aggregation.</li>
+          <li>Managed <b>Windows Server environments</b>, deploying and maintaining <b>Client Listener Applications</b> and the <b>Centralized Data Integration Platform</b> using <b>IIS</b> for optimal performance and reliability.</li>
+          <li>Conducted rigorous <b>system testing</b> to assess <b>reliability, robustness, and fault tolerance</b>, ensuring high availability.</li>
+          <li>Implemented <b>data encryption mechanisms</b> to secure <b>confidential payroll information</b>, enhancing data protection and compliance.</li>
+          <li>Collaborated cross-functionally with <b>Denovo Ventures and Equifax teams</b>, aligning development efforts with business objectives and security standards.</li>
+        </ul>
+      ),
+      skills:[
+        ".NET",
+        "C#",
+        "Python",
+        "ASP.NET",
+        "SQL",
+        "IIS",
+        "GitLab",
+      ]
     },
     {
       company: "Cloudnuro.ai",
@@ -77,8 +101,29 @@ export const DATA = {
       logoUrl: "/shopify.svg", // You'll need to add this image
       start: "Mar 2023",
       end: "Present",
-      description:
-        "Developed an AI-driven Recommendation System for VM and database scaling on AWS and Azure, reducing costs by 60%. Designed and implemented a Unified Onboarding Functionality, enabling users to onboard applications seamlessly within minutes. Engineered an Aggregation Framework to optimize license purchasing decisions. Automated SaaS reports drafting, review, and release process. Technologies: Golang, Python, Flask, PostgreSQL, OpenAI, HTML5, CSS3, JavaScript ES6, ReactJS, Redux, VueJS, GitHub.",
+      description: (
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Developed an <b>AI-driven Recommendation System</b> to assist users in <b>scaling VMs and databases</b> on <b>AWS and Azure</b>, leading to a <b>60% cost reduction</b> and improved <b>resource optimization</b>.</li>
+          <li>Designed and implemented a <b>Unified Onboarding Functionality</b>, enabling users to <b>seamlessly onboard applications within a minute</b> without assistance, enhancing the overall <b>user experience</b>.</li>
+          <li>Engineered an <b>Aggregation Framework</b> to consolidate <b>insightful cost-efficiency data</b>, optimizing <b>license purchasing decisions</b> for better financial planning.</li>
+          <li><b>Managed and streamlined SaaS Reports</b> by automating the <b>drafting, review, and release process</b>, ensuring <b>efficient reporting and compliance</b>.</li>
+        </ul>
+      ),
+      skills:[
+        "Golang",
+        "Python",
+        "Flask",
+        "PostgreSQL",
+        "Docker",
+        "OpenAI",
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6",
+        "ReactJS",
+        "Redux",
+        "VueJS",
+        "GitHub"
+      ]
     }
   ],
   education: [
