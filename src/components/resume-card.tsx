@@ -2,13 +2,14 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import BlurFade from "@/components/magicui/blur-fade";
 import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-
+const BLUR_FADE_DELAY = 0.04;
 interface ResumeCardProps {
   logoUrl: string;
   altText: string;
@@ -17,7 +18,8 @@ interface ResumeCardProps {
   href?: string;
   badges?: readonly string[];
   period: string;
-  description?: string;
+  description?: React.ReactNode;
+  skills?: readonly string[];
 }
 export const ResumeCard = ({
   logoUrl,
@@ -28,6 +30,7 @@ export const ResumeCard = ({
   badges,
   period,
   description,
+  skills
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(true);
 
@@ -61,7 +64,7 @@ export const ResumeCard = ({
               <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
                 {title}
                 {badges && (
-                  <span className="inline-flex gap-x-1">
+                  <span className="inline-flex ml-2">
                     {badges.map((badge, index) => (
                       <Badge
                         variant="secondary"
@@ -103,6 +106,15 @@ export const ResumeCard = ({
               {description}
             </motion.div>
           )}
+          {skills && (
+                  <span className="flex flex-wrap gap-1 mt-2">
+                    {skills.map((skill, id) => (
+                     <BlurFade key={skill} delay={BLUR_FADE_DELAY + id * 0.05}>
+                     <Badge key={skill}>{skill}</Badge>
+                   </BlurFade>
+                    ))}
+                  </span>
+                )}
         </div>
       </Card>
     </Link>
