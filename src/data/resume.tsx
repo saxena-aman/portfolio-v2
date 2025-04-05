@@ -55,7 +55,7 @@ export const DATA = {
       },
       Resume: {
         name: "Resume",
-        url: "https://dub.sh/dillion-twitter",
+        url: "https://personal-items1.s3.ap-south-1.amazonaws.com/Aman_Resume.pdf",
         icon: FileText,
 
         navbar: true,
