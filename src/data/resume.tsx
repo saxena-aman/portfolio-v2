@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon, FileText } from "lucide-react";
 export const DATA = {
   name: "Aman Saxena",
   initials: "AS",
-  url: "https://devaman.in", // Assumed from your LinkedIn URL
+  url: "https://devaman.in",
   location: "India",
   locationLink: "https://www.google.com/maps/place/India",
   description:
@@ -34,8 +34,7 @@ export const DATA = {
     "GitLab"
   ],
   navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/", icon: HomeIcon, label: "Home" }
   ],
   contact: {
     email: "amansaxena2809@gmail.com",
@@ -69,7 +68,7 @@ export const DATA = {
       badges: ["Current"],
       location: "Remote",
       title: "Software Engineer",
-      logoUrl: "/atomic.png",  // You'll need to add this image
+      logoUrl: "/Denovo.png",  // You'll need to add this image
       start: "Nov 2024",
       end: "Present",
       description: (
@@ -98,7 +97,7 @@ export const DATA = {
       badges: ["Current"],
       location: "Remote",
       title: "Software Engineer",
-      logoUrl: "/shopify.svg", // You'll need to add this image
+      logoUrl: "/cloudnuro.png", // You'll need to add this image
       start: "Mar 2023",
       end: "Present",
       description: (
@@ -129,9 +128,9 @@ export const DATA = {
   education: [
     {
       school: "Chandigarh University",
-      href: "https://buildspace.so",
+      href: "https://www.cuchd.in/",
       degree: "B.E. in Computer Science & Engineering",
-      logoUrl: "/buildspace.jpg",
+      logoUrl: "/chandigarh university.jpeg",
       start: "Jul 2019",
       end: "Jun 2023",
     }
