@@ -10,6 +10,7 @@ import {
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { DrawerToggle } from "./DrawerToggle";
 
 export default function Navbar() {
   return (
@@ -59,11 +60,39 @@ export default function Navbar() {
               </Tooltip>
             </DockIcon>
           ))}
+        <DockIcon key="chat">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="#"
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "size-12"
+                )}
+              >
+                <DrawerToggle className="w-full max-w-2xl mx-auto h-[80vh] rounded-xl p-6"/>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Chat</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+
         <Separator orientation="vertical" className="h-full py-2" />
+
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
-              <ModeToggle />
+              <Link
+                href="#"
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "size-12"
+                )}
+              >
+                <ModeToggle />
+              </Link>
             </TooltipTrigger>
             <TooltipContent>
               <p>Theme</p>

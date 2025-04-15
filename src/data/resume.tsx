@@ -56,41 +56,11 @@ export const DATA = {
         name: "Resume",
         url: "https://personal-items1.s3.ap-south-1.amazonaws.com/Aman_Resume.pdf",
         icon: FileText,
-
         navbar: true,
       },
     },
   },
   work: [
-    {
-      company: "Denovo Ventures",
-      href: "#",
-      badges: ["Current"],
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/Denovo.png",  // You'll need to add this image
-      start: "Nov 2024",
-      end: "Present",
-      description: (
-        <ul className="list-disc pl-4 space-y-1">
-          <li>Designed and implemented a <b>Listener System</b> to efficiently fetch and process <b>Employer and Employee data</b>.</li>
-          <li>Developed a <b>Centralized Data Integration Platform</b> connecting multiple <b>Employer Listener Systems</b>, ensuring seamless data aggregation.</li>
-          <li>Managed <b>Windows Server environments</b>, deploying and maintaining <b>Client Listener Applications</b> and the <b>Centralized Data Integration Platform</b> using <b>IIS</b> for optimal performance and reliability.</li>
-          <li>Conducted rigorous <b>system testing</b> to assess <b>reliability, robustness, and fault tolerance</b>, ensuring high availability.</li>
-          <li>Implemented <b>data encryption mechanisms</b> to secure <b>confidential payroll information</b>, enhancing data protection and compliance.</li>
-          <li>Collaborated cross-functionally with <b>Denovo Ventures and Equifax teams</b>, aligning development efforts with business objectives and security standards.</li>
-        </ul>
-      ),
-      skills:[
-        ".NET",
-        "C#",
-        "Python",
-        "ASP.NET",
-        "SQL",
-        "IIS",
-        "GitLab",
-      ]
-    },
     {
       company: "Cloudnuro.ai",
       href: "#",
@@ -122,6 +92,35 @@ export const DATA = {
         "Redux",
         "VueJS",
         "GitHub"
+      ]
+    },
+    {
+      company: "Denovo Ventures",
+      href: "#",
+      badges: ["Current"],
+      location: "Remote",
+      title: "Software Engineer",
+      logoUrl: "/Denovo.png",  // You'll need to add this image
+      start: "Nov 2024",
+      end: "Present",
+      description: (
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Designed and implemented a <b>Listener System</b> to efficiently fetch and process <b>Employer and Employee data</b>.</li>
+          <li>Developed a <b>Centralized Data Integration Platform</b> connecting multiple <b>Employer Listener Systems</b>, ensuring seamless data aggregation.</li>
+          <li>Managed <b>Windows Server environments</b>, deploying and maintaining <b>Client Listener Applications</b> and the <b>Centralized Data Integration Platform</b> using <b>IIS</b> for optimal performance and reliability.</li>
+          <li>Conducted rigorous <b>system testing</b> to assess <b>reliability, robustness, and fault tolerance</b>, ensuring high availability.</li>
+          <li>Implemented <b>data encryption mechanisms</b> to secure <b>confidential payroll information</b>, enhancing data protection and compliance.</li>
+          <li>Collaborated cross-functionally with <b>Denovo Ventures and Equifax teams</b>, aligning development efforts with business objectives and security standards.</li>
+        </ul>
+      ),
+      skills:[
+        ".NET",
+        "C#",
+        "Python",
+        "ASP.NET",
+        "SQL",
+        "IIS",
+        "GitLab",
       ]
     }
   ],
