@@ -70,7 +70,7 @@ export default function Navbar() {
                   "size-12"
                 )}
               >
-                <DrawerToggle className="w-full max-w-2xl mx-auto h-[80vh] rounded-xl p-6"/>
+                <DrawerToggle className="w-full max-w-2xl mx-auto h-[80vh] rounded-xl p-2"/>
               </Link>
             </TooltipTrigger>
             <TooltipContent>
