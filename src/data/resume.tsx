@@ -138,17 +138,18 @@ export const DATA = {
     {
       title: "Rubi AI Assistant",
       href: "https://www.devaman.in/?openChat=true",
-      // dates: "Jan 2024 - Feb 2024",
+      dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "Rubi is an AI assistant that answers questions about my professional background, skills, and experience using my resume as a knowledge base. Ask Rubi anything about my work history, technical skills, or projects for instant, accurate information.",
       technologies: [
         "Next.js",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
+        "N8N",
+        "RAG (Retrieval Augmented Generation)",
+        "OpenAI",
         "TailwindCSS",
-        "Stripe",
+        "Docker",
         "Shadcn UI",
         "Magic UI",
       ],
@@ -160,8 +161,8 @@ export const DATA = {
         },
       ],
       image: "/rubi_assistant.png",
-      // video:
-      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      video:
+        "",
     },
     // {
     //   title: "Magic UI",
