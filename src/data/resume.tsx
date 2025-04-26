@@ -56,41 +56,11 @@ export const DATA = {
         name: "Resume",
         url: "https://personal-items1.s3.ap-south-1.amazonaws.com/Aman_Resume.pdf",
         icon: FileText,
-
         navbar: true,
       },
     },
   },
   work: [
-    {
-      company: "Denovo Ventures",
-      href: "#",
-      badges: ["Current"],
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/Denovo.png",  // You'll need to add this image
-      start: "Nov 2024",
-      end: "Present",
-      description: (
-        <ul className="list-disc pl-4 space-y-1">
-          <li>Designed and implemented a <b>Listener System</b> to efficiently fetch and process <b>Employer and Employee data</b>.</li>
-          <li>Developed a <b>Centralized Data Integration Platform</b> connecting multiple <b>Employer Listener Systems</b>, ensuring seamless data aggregation.</li>
-          <li>Managed <b>Windows Server environments</b>, deploying and maintaining <b>Client Listener Applications</b> and the <b>Centralized Data Integration Platform</b> using <b>IIS</b> for optimal performance and reliability.</li>
-          <li>Conducted rigorous <b>system testing</b> to assess <b>reliability, robustness, and fault tolerance</b>, ensuring high availability.</li>
-          <li>Implemented <b>data encryption mechanisms</b> to secure <b>confidential payroll information</b>, enhancing data protection and compliance.</li>
-          <li>Collaborated cross-functionally with <b>Denovo Ventures and Equifax teams</b>, aligning development efforts with business objectives and security standards.</li>
-        </ul>
-      ),
-      skills:[
-        ".NET",
-        "C#",
-        "Python",
-        "ASP.NET",
-        "SQL",
-        "IIS",
-        "GitLab",
-      ]
-    },
     {
       company: "Cloudnuro.ai",
       href: "#",
@@ -123,6 +93,35 @@ export const DATA = {
         "VueJS",
         "GitHub"
       ]
+    },
+    {
+      company: "Denovo Ventures",
+      href: "#",
+      badges: ["Current"],
+      location: "Remote",
+      title: "Software Engineer",
+      logoUrl: "/Denovo.png",  // You'll need to add this image
+      start: "Nov 2024",
+      end: "Present",
+      description: (
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Designed and implemented a <b>Listener System</b> to efficiently fetch and process <b>Employer and Employee data</b>.</li>
+          <li>Developed a <b>Centralized Data Integration Platform</b> connecting multiple <b>Employer Listener Systems</b>, ensuring seamless data aggregation.</li>
+          <li>Managed <b>Windows Server environments</b>, deploying and maintaining <b>Client Listener Applications</b> and the <b>Centralized Data Integration Platform</b> using <b>IIS</b> for optimal performance and reliability.</li>
+          <li>Conducted rigorous <b>system testing</b> to assess <b>reliability, robustness, and fault tolerance</b>, ensuring high availability.</li>
+          <li>Implemented <b>data encryption mechanisms</b> to secure <b>confidential payroll information</b>, enhancing data protection and compliance.</li>
+          <li>Collaborated cross-functionally with <b>Denovo Ventures and Equifax teams</b>, aligning development efforts with business objectives and security standards.</li>
+        </ul>
+      ),
+      skills:[
+        ".NET",
+        "C#",
+        "Python",
+        "ASP.NET",
+        "SQL",
+        "IIS",
+        "GitLab",
+      ]
     }
   ],
   education: [
@@ -137,9 +136,9 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Rubi AI Assistant",
+      href: "https://www.devaman.in/?openChat=true",
+      // dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
         "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
@@ -156,108 +155,108 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
+          href: "https://www.devaman.in/?openChat=true",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      image: "/rubi_assistant.png",
+      // video:
+      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
     },
-    {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
-      active: true,
-      description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://magicui.design",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
-    },
-    {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
-      active: true,
-      description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
-    },
-    {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
-    },
+    // {
+    //   title: "Magic UI",
+    //   href: "https://magicui.design",
+    //   dates: "June 2023 - Present",
+    //   active: true,
+    //   description:
+    //     "Designed, developed and sold animated UI components for developers.",
+    //   technologies: [
+    //     "Next.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "Prisma",
+    //     "TailwindCSS",
+    //     "Stripe",
+    //     "Shadcn UI",
+    //     "Magic UI",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://magicui.design",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //     {
+    //       type: "Source",
+    //       href: "https://github.com/magicuidesign/magicui",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   video: "https://cdn.magicui.design/bento-grid.mp4",
+    // },
+    // {
+    //   title: "llm.report",
+    //   href: "https://llm.report",
+    //   dates: "April 2023 - September 2023",
+    //   active: true,
+    //   description:
+    //     "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
+    //   technologies: [
+    //     "Next.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "Prisma",
+    //     "TailwindCSS",
+    //     "Shadcn UI",
+    //     "Magic UI",
+    //     "Stripe",
+    //     "Cloudflare Workers",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://llm.report",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //     {
+    //       type: "Source",
+    //       href: "https://github.com/dillionverma/llm.report",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   video: "https://cdn.llm.report/openai-demo.mp4",
+    // },
+    // {
+    //   title: "Automatic Chat",
+    //   href: "https://automatic.chat",
+    //   dates: "April 2023 - March 2024",
+    //   active: true,
+    //   description:
+    //     "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+    //   technologies: [
+    //     "Next.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "Prisma",
+    //     "TailwindCSS",
+    //     "Shadcn UI",
+    //     "Magic UI",
+    //     "Stripe",
+    //     "Cloudflare Workers",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://automatic.chat",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   video:
+    //     "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+    // },
   ],
   hackathons: [
     {
