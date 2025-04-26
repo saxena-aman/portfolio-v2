@@ -1,15 +1,13 @@
 "use client";
 import ReactMarkdown from "react-markdown";
 import { useState, useRef, useEffect, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   Drawer,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerClose,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { Bot, Send, User } from "lucide-react";
@@ -30,7 +28,7 @@ interface Message {
   content: string;
 }
 
-// And then update the MessageItem component to render markdown:
+// Message Item Component
 function MessageItem({ message }: { message: Message }) {
   const isUser = message.role === "user";
 
@@ -73,7 +71,6 @@ function MessageItem({ message }: { message: Message }) {
             <ReactMarkdown
               className="prose prose-sm dark:prose-invert max-w-none"
               components={{
-                // Custom styling for list items, bold text, etc.
                 ul: ({ node, ...props }) => (
                   <ul className="list-disc pl-4 space-y-1" {...props} />
                 ),
@@ -98,108 +95,6 @@ function MessageItem({ message }: { message: Message }) {
   );
 }
 
-// Create a client component that uses search params
-function ChatWithSearchParams({
-  setOpen,
-  messages,
-  setMessages,
-  isLoading,
-  messagesEndRef,
-  inputValue,
-  setInputValue,
-  handleSendMessage
-}: {
-  setOpen: (open: boolean) => void;
-  messages: Message[];
-  setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
-  isLoading: boolean;
-  messagesEndRef: React.RefObject<HTMLDivElement>;
-  inputValue: string;
-  setInputValue: React.Dispatch<React.SetStateAction<string>>;
-  handleSendMessage: () => Promise<void>;
-}) {
-  const searchParams = useSearchParams();
-  
-  // Check URL parameter on component mount
-  useEffect(() => {
-    // Check if the "openChat" parameter exists in the URL
-    const shouldOpenChat = searchParams.get("openChat");
-    
-    if (shouldOpenChat === "true") {
-      setOpen(true);
-      
-      // Optional: Remove the parameter from URL for cleaner navigation
-      // This creates a new URL without the parameter
-      const url = new URL(window.location.href);
-      url.searchParams.delete("openChat");
-      
-      // Replace current URL without reload
-      window.history.replaceState({}, "", url.toString());
-    }
-  }, [searchParams, setOpen]);
-
-  return (
-    <>
-      {/* Messages container */}
-      <div className="flex-1 overflow-y-auto py-4 px-1 max-h-96">
-        {messages.map((message, index) => (
-          <MessageItem key={index} message={message} />
-        ))}
-        {isLoading && (
-          <div className="flex justify-start mb-4">
-            <div className="bg-gray-200 dark:bg-gray-700 rounded-xl px-4 py-2 flex items-center">
-              <div className="w-12 text-gray-500 dark:text-gray-400">
-                <div className="flex space-x-1">
-                  <div
-                    className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
-                    style={{ animationDelay: "0ms" }}
-                  ></div>
-                  <div
-                    className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
-                    style={{ animationDelay: "150ms" }}
-                  ></div>
-                  <div
-                    className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
-                    style={{ animationDelay: "300ms" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        {/* This element is used for scrolling to bottom */}
-        <div ref={messagesEndRef} />
-      </div>
-
-      <DrawerFooter>
-        <div className="flex flex-row items-center gap-2 w-full border border-gray-300 dark:border-gray-700 rounded-xl p-2">
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Type your message here..."
-            className="flex-grow basis-9/10 p-2 rounded-md focus:outline-none bg-transparent text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
-            disabled={isLoading}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !isLoading) {
-                handleSendMessage();
-              }
-            }}
-          />
-          <Button
-            variant="ghost"
-            className="flex-none basis-1/10 flex items-center justify-center p-2 rounded-full aspect-square"
-            onClick={handleSendMessage}
-            disabled={isLoading}
-          >
-            <Send className="w-full h-full max-w-5 max-h-5 text-black dark:text-white" />
-          </Button>
-        </div>
-      </DrawerFooter>
-    </>
-  );
-}
-
 // Create a fallback for Suspense
 function ChatFallback() {
   return (
@@ -214,6 +109,31 @@ interface DrawerToggleProps {
   style?: React.CSSProperties;
   buttonClassName?: string;
   buttonStyle?: React.CSSProperties;
+}
+
+// Create a client component for the URL checker
+function UrlParamChecker({ onOpen }: { onOpen: () => void }) {
+  useEffect(() => {
+    // Client-side only code
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const shouldOpen = urlParams.get('openChat') === 'true';
+      
+      if (shouldOpen) {
+        onOpen();
+        
+        // Remove parameter
+        urlParams.delete('openChat');
+        const newUrl = window.location.pathname + 
+          (urlParams.toString() ? '?' + urlParams.toString() : '') + 
+          window.location.hash;
+        
+        window.history.replaceState({}, '', newUrl);
+      }
+    }
+  }, [onOpen]);
+  
+  return null;
 }
 
 export function DrawerToggle({
@@ -232,9 +152,8 @@ export function DrawerToggle({
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [sessionId] = useState(generateUUID()); // Generate session ID once when component mounts
-
-  // For Next.js
+  const [sessionId] = useState(generateUUID());
+  
   const router = useRouter();
 
   // Auto-scroll to bottom when messages change
@@ -270,7 +189,6 @@ export function DrawerToggle({
       }
 
       const data = await response.json();
-      // Parse the specific response structure where the message is in data.output
       return { response: data.output || "No response received." };
     } catch (error) {
       console.error("Error calling chat API:", error);
@@ -305,15 +223,22 @@ export function DrawerToggle({
     ]);
   };
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   return (
     <>
+      {/* Client-side URL param checker component */}
+      <UrlParamChecker onOpen={handleOpen} />
+      
       <Button
         variant="ghost"
         type="button"
         size="icon"
         className={buttonClassName}
         style={buttonStyle}
-        onClick={() => setOpen(true)}
+        onClick={handleOpen}
       >
         <Bot className="size-5" />
       </Button>
@@ -327,18 +252,60 @@ export function DrawerToggle({
             <DrawerTitle className="text-center">Rubi AI Assistant</DrawerTitle>
           </DrawerHeader>
 
-          <Suspense fallback={<ChatFallback />}>
-            <ChatWithSearchParams 
-              setOpen={setOpen}
-              messages={messages}
-              setMessages={setMessages}
-              isLoading={isLoading}
-              messagesEndRef={messagesEndRef}
-              inputValue={inputValue}
-              setInputValue={setInputValue}
-              handleSendMessage={handleSendMessage}
-            />
-          </Suspense>
+          <div className="flex-1 overflow-y-auto py-4 px-1 max-h-96">
+            {messages.map((message, index) => (
+              <MessageItem key={index} message={message} />
+            ))}
+            {isLoading && (
+              <div className="flex justify-start mb-4">
+                <div className="bg-gray-200 dark:bg-gray-700 rounded-xl px-4 py-2 flex items-center">
+                  <div className="w-12 text-gray-500 dark:text-gray-400">
+                    <div className="flex space-x-1">
+                      <div
+                        className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
+                        style={{ animationDelay: "0ms" }}
+                      ></div>
+                      <div
+                        className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
+                        style={{ animationDelay: "150ms" }}
+                      ></div>
+                      <div
+                        className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
+                        style={{ animationDelay: "300ms" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          <DrawerFooter>
+            <div className="flex flex-row items-center gap-2 w-full border border-gray-300 dark:border-gray-700 rounded-xl p-2">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder="Type your message here..."
+                className="flex-grow basis-9/10 p-2 rounded-md focus:outline-none bg-transparent text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                disabled={isLoading}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !isLoading) {
+                    handleSendMessage();
+                  }
+                }}
+              />
+              <Button
+                variant="ghost"
+                className="flex-none basis-1/10 flex items-center justify-center p-2 rounded-full aspect-square"
+                onClick={handleSendMessage}
+                disabled={isLoading}
+              >
+                <Send className="w-full h-full max-w-5 max-h-5 text-black dark:text-white" />
+              </Button>
+            </div>
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
