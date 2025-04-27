@@ -115,24 +115,25 @@ interface DrawerToggleProps {
 function UrlParamChecker({ onOpen }: { onOpen: () => void }) {
   useEffect(() => {
     // Client-side only code
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const urlParams = new URLSearchParams(window.location.search);
-      const shouldOpen = urlParams.get('openChat') === 'true';
-      
+      const shouldOpen = urlParams.get("openChat") === "true";
+
       if (shouldOpen) {
         onOpen();
-        
+
         // Remove parameter
-        urlParams.delete('openChat');
-        const newUrl = window.location.pathname + 
-          (urlParams.toString() ? '?' + urlParams.toString() : '') + 
+        urlParams.delete("openChat");
+        const newUrl =
+          window.location.pathname +
+          (urlParams.toString() ? "?" + urlParams.toString() : "") +
           window.location.hash;
-        
-        window.history.replaceState({}, '', newUrl);
+
+        window.history.replaceState({}, "", newUrl);
       }
     }
   }, [onOpen]);
-  
+
   return null;
 }
 
@@ -144,16 +145,17 @@ export function DrawerToggle({
 }: DrawerToggleProps) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { 
-      role: "assistant", 
-      content: "Hi there! I'm Rubi, an AI assistant who can answer questions about Aman's professional background, skills, and experience. Feel free to ask me anything about his resume or career journey!" 
-    }
+    {
+      role: "assistant",
+      content:
+        "Hi there! I'm Rubi, an AI assistant who can answer questions about Aman's professional background, skills, and experience. Feel free to ask me anything about his resume or career journey!",
+    },
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [sessionId] = useState(generateUUID());
-  
+
   const router = useRouter();
 
   // Auto-scroll to bottom when messages change
@@ -170,7 +172,7 @@ export function DrawerToggle({
 
     try {
       const response = await fetch(
-        "https://n8n.devaman.in/webhook/f2f18361-e02c-4b92-9844-a3be5cb85e1d/chat",
+        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/chat`,
         {
           method: "POST",
           headers: {
@@ -231,7 +233,7 @@ export function DrawerToggle({
     <>
       {/* Client-side URL param checker component */}
       <UrlParamChecker onOpen={handleOpen} />
-      
+
       <Button
         variant="ghost"
         type="button"
