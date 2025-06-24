@@ -165,7 +165,7 @@ export const DATA = {
         "",
     },
     {
-      title: "DISPOSABLE VPN",
+      title: "Disposible VPN",
       href: "https://www.devaman.in/?openChat=true",
       dates: "Jan 2025 - Mar 2025",
       active: true,
