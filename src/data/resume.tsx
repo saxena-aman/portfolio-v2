@@ -164,6 +164,33 @@ export const DATA = {
       video:
         "",
     },
+    {
+      title: "DISPOSABLE VPN",
+      href: "https://www.devaman.in/?openChat=true",
+      dates: "Jan 2025 - Mar 2025",
+      active: true,
+      description: "Designed and implemented a fully automated, on-demand VPN provisioning platform. Streamlined deployment workflows with n8n and Python, enabling secure, ephemeral VPN instances with 85% faster provisioning time and supporting 100+ concurrent connections with 99.9% availability.",
+      technologies: [
+        "Google Cloud Run",
+        "Google Cloud Functions",
+        "Docker",
+        "Python",
+        "n8n",
+        "SSH",
+        "Serverless Architecture",
+        "Cloud Automation"
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://disposable-vpn.devaman.in",
+          icon: <Icons.globe className="size-3" />
+        }
+      ],
+      image: "/disposible-vpn.png",
+      video: ""
+    }
+    ,
     // {
     //   title: "Magic UI",
     //   href: "https://magicui.design",
