@@ -165,8 +165,8 @@ export const DATA = {
         "",
     },
     {
-      title: "Disposible VPN",
-      href: "https://www.devaman.in/?openChat=true",
+      title: "Disposable VPN",
+      href: "https://disposable-vpn.devaman.in",
       dates: "Jan 2025 - Mar 2025",
       active: true,
       description: "Designed and implemented a fully automated, on-demand VPN provisioning platform. Streamlined deployment workflows with n8n and Python, enabling secure, ephemeral VPN instances with 85% faster provisioning time and supporting 100+ concurrent connections with 99.9% availability.",
