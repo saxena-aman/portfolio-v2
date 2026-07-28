@@ -5,40 +5,88 @@ export const DATA = {
   name: "Aman Saxena",
   initials: "AS",
   url: "https://devaman.in",
-  location: "India",
-  locationLink: "https://www.google.com/maps/place/India",
+  location: "Australia",
+  locationLink: "https://www.google.com/maps/place/Australia",
   description:
-    "Software Engineer specializing in backend development and AI solutions. Passionate about building efficient systems and solving complex problems.",
+    "Platform & AI Engineer building agentic workflows, cloud-native backends, and developer tooling in Golang, Python and .NET.",
   summary:
-    "Software Engineer with expertise in Golang, C#, and Python. My focus is on developing reliable, scalable applications and AI-driven systems. I've worked on various projects including [an AI-driven Recommendation System](/#work), [centralized data platforms](/#work), and [personal AI assistants](/#projects). Currently working at Denovo Ventures in partnership with Cloudnuro.ai, enhancing data integration solutions.",
+    "Software Engineer with 3+ years building scalable backend, cloud-native and AI platform systems in **Golang, Python and C#/.NET**. I currently work in [Platform Engineering at HELIA](/#work), designing multi-agent AI workflows on **AWS Bedrock, Claude and GitHub Actions** that automate everything from product discovery through to delivery planning. Before that I built [AI-driven cloud cost optimisation and Golang microservices at Cloudnuro.AI](/#work) and [secure payroll data pipelines for Denovo Ventures](/#work). Outside of work I build things like [an on-demand disposable VPN](/#projects) and [Rubi, my own RAG-powered AI assistant](/#projects). Fully eligible to work in Australia (Work Visa holder).",
   avatarUrl: "/me.png", // Keeping this as is, you can update with your image path
   skills: [
-    "Golang",
-    "Python",
-    "Flask",
-    "PostgreSQL",
-    "Docker",
-    "OpenAI",
-    "HTML5",
-    "CSS3",
-    "JavaScript ES6",
-    "ReactJS",
-    "Redux",
-    "VueJS",
-    "GitHub",
-    ".NET",
-    "C#",
-    "ASP.NET",
-    "SQL",
-    "IIS",
-    "GitLab"
+    {
+      category: "AI & Agentic Systems",
+      items: [
+        "AWS Bedrock",
+        "Claude (Anthropic)",
+        "OpenAI API",
+        "GitHub Agentic Workflows",
+        "GitHub Copilot",
+        "Multi-Agent Orchestration",
+        "RAG",
+        "Prompt Engineering",
+        "Machine Learning",
+        "NLP",
+      ],
+    },
+    {
+      category: "Backend & Systems",
+      items: [
+        "Golang",
+        "Python",
+        "C#/.NET",
+        "ASP.NET",
+        "REST APIs",
+        "Microservices",
+        "Distributed Systems",
+        "Secure System Design",
+      ],
+    },
+    {
+      category: "Cloud, DevOps & Platform",
+      items: [
+        "AWS",
+        "GCP",
+        "Docker",
+        "CI/CD",
+        "GitHub Actions",
+        "Cloud Run",
+        "Cloud Functions",
+        "Serverless",
+        "Developer Platform Tooling",
+        "Monitoring & Logging",
+      ],
+    },
+    {
+      category: "Databases & Data",
+      items: [
+        "PostgreSQL",
+        "Redis",
+        "SQL Server",
+        "Database Design",
+        "Data Aggregation",
+        "Performance Optimisation",
+      ],
+    },
+    {
+      category: "Automation & Workflow",
+      items: [
+        "n8n",
+        "Workflow Orchestration",
+        "Infrastructure Automation",
+        "Python Scripting",
+      ],
+    },
+    {
+      category: "Frontend",
+      items: ["JavaScript/TypeScript", "React.js", "Next.js", "Vue.js"],
+    },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" }
   ],
   contact: {
     email: "amansaxena2809@gmail.com",
-    tel: "+91-7017023649",
+    tel: "+61 475 225 735",
     social: {
       GitHub: {
         name: "GitHub",
@@ -48,7 +96,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/sde-aman",
+        url: "https://www.linkedin.com/in/dev-aman",
         icon: Icons.linkedin,
         navbar: true,
       },
@@ -62,64 +110,93 @@ export const DATA = {
   },
   work: [
     {
-      company: "Cloudnuro.ai",
+      company: "HELIA",
       href: "#",
       badges: ["Current"],
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/cloudnuro.png", // You'll need to add this image
-      start: "Mar 2023",
+      location: "Australia",
+      title: "Engineer – Platform Engineering",
+      logoUrl: "/helia.svg",
+      start: "May 2026",
       end: "Present",
       description: (
         <ul className="list-disc pl-4 space-y-1">
-          <li>Developed an <b>AI-driven Recommendation System</b> to assist users in <b>scaling VMs and databases</b> on <b>AWS and Azure</b>, leading to a <b>60% cost reduction</b> and improved <b>resource optimization</b>.</li>
-          <li>Designed and implemented a <b>Unified Onboarding Functionality</b>, enabling users to <b>seamlessly onboard applications within a minute</b> without assistance, enhancing the overall <b>user experience</b>.</li>
-          <li>Engineered an <b>Aggregation Framework</b> to consolidate <b>insightful cost-efficiency data</b>, optimizing <b>license purchasing decisions</b> for better financial planning.</li>
-          <li><b>Managed and streamlined SaaS Reports</b> by automating the <b>drafting, review, and release process</b>, ensuring <b>efficient reporting and compliance</b>.</li>
+          <li>Built an end-to-end <b>Discovery-to-Delivery agentic workflow</b> orchestrating specialised AI agents across <b>GitHub Actions</b> and <b>GitHub Agentic Workflows</b> with <b>Claude (Anthropic) on AWS Bedrock</b>, cutting end-to-end delivery cycle time by <b>70%</b>.</li>
+          <li>Automated <b>GitHub repository and project provisioning</b> from an organisation-wide template repository I authored, reducing new project setup from <b>2 days to under 1 minute</b>.</li>
+          <li>Engineered <b>multi-persona review agents</b> that evaluate product discovery documents against <b>CTO and COO perspectives</b>, surfacing technical feasibility and business constraints before work enters delivery.</li>
+          <li>Developed an <b>Architecture Agent</b> generating three candidate architectures with explicit trade-offs, triggering a <b>Planner Agent</b> on merge that decomposes the approved design into scoped sub-tasks.</li>
+          <li>Implemented <b>guardrails</b> driving adoption of secure, maintainable in-house libraries, removing recurring engineering friction across teams through targeted agentic workflows.</li>
+        </ul>
+      ),
+      skills: [
+        "AWS Bedrock",
+        "Claude (Anthropic)",
+        "GitHub Agentic Workflows",
+        "GitHub Actions",
+        "Multi-Agent Orchestration",
+        "Golang",
+        "Python",
+        "AWS",
+        "CI/CD",
+        "Developer Platform Tooling",
+      ]
+    },
+    {
+      company: "Cloudnuro.AI",
+      href: "#",
+      badges: ["Full-time"],
+      location: "Remote",
+      title: "Software Engineer",
+      logoUrl: "/cloudnuro.png",
+      start: "Mar 2023",
+      end: "Nov 2025",
+      description: (
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Designed a <b>cloud-native AI-driven recommendation system</b> in <b>Python</b> using machine learning models and REST APIs, analysing usage patterns to optimise <b>VM and database scaling</b> on <b>AWS and Azure</b>, achieving an average <b>60% cost reduction</b>.</li>
+          <li>Built a backend-driven <b>onboarding platform</b> using <b>Golang microservices</b>, enabling application onboarding within <b>one minute</b> without manual assistance.</li>
+          <li>Engineered a <b>data aggregation framework</b> in <b>Golang and PostgreSQL</b> consolidating cost-efficiency metrics from multiple sources, driving <b>SaaS license purchasing decisions</b>.</li>
+          <li>Automated the full <b>SaaS reporting lifecycle</b> (drafting, review, release) with <b>Python</b>, saving <b>20 hours weekly</b>.</li>
         </ul>
       ),
       skills:[
         "Golang",
         "Python",
-        "Flask",
         "PostgreSQL",
+        "Redis",
         "Docker",
-        "OpenAI",
-        "HTML5",
-        "CSS3",
-        "JavaScript ES6",
+        "AWS",
+        "Azure",
+        "Microservices",
+        "REST APIs",
+        "Machine Learning",
         "ReactJS",
-        "Redux",
         "VueJS",
-        "GitHub"
       ]
     },
     {
       company: "Denovo Ventures",
       href: "#",
-      badges: ["Current"],
+      badges: ["Contract"],
       location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/Denovo.png",  // You'll need to add this image
+      title: "Software Engineer (Contract)",
+      logoUrl: "/Denovo.png",
       start: "Nov 2024",
-      end: "Present",
+      end: "Nov 2025",
       description: (
         <ul className="list-disc pl-4 space-y-1">
-          <li>Designed and implemented a <b>Listener System</b> to efficiently fetch and process <b>Employer and Employee data</b>.</li>
-          <li>Developed a <b>Centralized Data Integration Platform</b> connecting multiple <b>Employer Listener Systems</b>, ensuring seamless data aggregation.</li>
-          <li>Managed <b>Windows Server environments</b>, deploying and maintaining <b>Client Listener Applications</b> and the <b>Centralized Data Integration Platform</b> using <b>IIS</b> for optimal performance and reliability.</li>
-          <li>Conducted rigorous <b>system testing</b> to assess <b>reliability, robustness, and fault tolerance</b>, ensuring high availability.</li>
-          <li>Implemented <b>data encryption mechanisms</b> to secure <b>confidential payroll information</b>, enhancing data protection and compliance.</li>
-          <li>Collaborated cross-functionally with <b>Denovo Ventures and Equifax teams</b>, aligning development efforts with business objectives and security standards.</li>
+          <li>Contract role in partnership with <b>Cloudnuro.AI</b>.</li>
+          <li>Designed <b>enterprise-grade data ingestion services</b> in <b>.NET and C#</b>, securely processing sensitive <b>payroll data</b> for third-party integrations.</li>
+          <li>Applied <b>secure coding standards, AES encryption</b> and compliance-driven system design to protect payroll data in regulated environments.</li>
+          <li>Built and tested backend services on <b>Windows Server with IIS</b>, achieving <b>99.9% uptime</b> through rigorous reliability and fault-tolerance validation.</li>
         </ul>
       ),
       skills:[
         ".NET",
         "C#",
-        "Python",
         "ASP.NET",
-        "SQL",
+        "SQL Server",
         "IIS",
+        "AES Encryption",
+        "Secure System Design",
         "GitLab",
       ]
     }
@@ -134,6 +211,15 @@ export const DATA = {
       end: "Jun 2023",
     }
   ],
+  certifications: [
+    {
+      name: "Google Cloud Associate Cloud Engineer (GCP ACE)",
+      issuer: "Google Cloud",
+      year: "2025",
+      logoUrl: "/gcp.svg",
+      href: "https://cloud.google.com/learn/certification/cloud-engineer",
+    }
+  ],
   projects: [
     {
       title: "Rubi AI Assistant",
@@ -141,13 +227,14 @@ export const DATA = {
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
-        "Rubi is an AI assistant that answers questions about my professional background, skills, and experience using my resume as a knowledge base. Ask Rubi anything about my work history, technical skills, or projects for instant, accurate information.",
+        "A personal AI assistant that answers questions about my professional background using my resume as a knowledge base. Implemented a Retrieval-Augmented Generation (RAG) pipeline integrating vector-based document retrieval with LLM responses, plus prompt orchestration and context management logic to improve response relevance and reduce hallucinations.",
       technologies: [
+        "OpenAI",
+        "Python",
         "Next.js",
         "Typescript",
-        "N8N",
+        "n8n",
         "RAG (Retrieval Augmented Generation)",
-        "OpenAI",
         "TailwindCSS",
         "Docker",
         "Shadcn UI",
@@ -169,7 +256,7 @@ export const DATA = {
       href: "https://disposable-vpn.devaman.in",
       dates: "Jan 2025 - Mar 2025",
       active: true,
-      description: "Designed and implemented a fully automated, on-demand VPN provisioning platform. Streamlined deployment workflows with n8n and Python, enabling secure, ephemeral VPN instances with 85% faster provisioning time and supporting 100+ concurrent connections with 99.9% availability.",
+      description: "An on-demand VPN platform built on a serverless backend architecture with infrastructure automation and secure access control. Automated provisioning and teardown workflows support ephemeral, secure access environments at scale — 85% faster provisioning, 100+ concurrent connections and 99.9% availability.",
       technologies: [
         "Google Cloud Run",
         "Google Cloud Functions",

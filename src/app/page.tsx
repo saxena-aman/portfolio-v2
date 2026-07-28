@@ -98,18 +98,51 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <section id="skills">
+      <section id="certifications">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <BlurFade delay={BLUR_FADE_DELAY * 8.5}>
+            <h2 className="text-xl font-bold">Certifications</h2>
+          </BlurFade>
+          {DATA.certifications.map((certification, id) => (
+            <BlurFade
+              key={certification.name}
+              delay={BLUR_FADE_DELAY * 9 + id * 0.05}
+            >
+              <ResumeCard
+                key={certification.name}
+                href={certification.href}
+                logoUrl={certification.logoUrl}
+                altText={certification.name}
+                title={certification.name}
+                subtitle={certification.issuer}
+                period={certification.year}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id="skills">
+        <div className="flex min-h-0 flex-col gap-y-4">
+          <BlurFade delay={BLUR_FADE_DELAY * 9.5}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
+          {DATA.skills.map((group, groupId) => (
+            <BlurFade
+              key={group.category}
+              delay={BLUR_FADE_DELAY * 10 + groupId * 0.05}
+            >
+              <div className="flex flex-col gap-y-1.5">
+                <h3 className="text-sm font-medium text-muted-foreground">
+                  {group.category}
+                </h3>
+                <div className="flex flex-wrap gap-1">
+                  {group.items.map((skill) => (
+                    <Badge key={skill}>{skill}</Badge>
+                  ))}
+                </div>
+              </div>
+            </BlurFade>
+          ))}
         </div>
       </section>
       <section id="projects">
